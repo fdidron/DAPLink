@@ -11,6 +11,7 @@ common:
         - FMC_PE
         - __FPU_PRESENT=1
         - DAPLINK_NO_ASSERT_FILENAMES
+        - OS_CLOCK=120000000
     includes:
         - source/hic_hal/gigadevice/gd32f303xe
         - source/hic_hal/gigadevice/gd32f30x/peripheral/Include

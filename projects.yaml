@@ -102,7 +102,6 @@ module:
         - records/hic_hal/stm32f103xb.yaml
         - records/usb/usb-hid.yaml
     hic_gd32f303xe: &module_hic_gd32f303xe
-        - records/rtos/rtos-cm4.yaml
         - records/hic_hal/gd32f303xe.yaml
 
 projects:
