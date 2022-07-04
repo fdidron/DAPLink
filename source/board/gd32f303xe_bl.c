@@ -19,17 +19,12 @@
  * limitations under the License.
  */
 
+#include "target_config.h"
 #include "target_board.h"
 #include "target_family.h"
-#include "target_config.h"
 #include "daplink_addr.h"
-#include "compiler.h"
 
 const char *board_id   = "0000";
-
-// Warning - changing the interface start will break backwards compatibility
-COMPILER_ASSERT(DAPLINK_ROM_IF_START == 0x0800A000);
-COMPILER_ASSERT(DAPLINK_ROM_IF_SIZE == 0x00075000);
 
 // lpc4322 target information
 static const sector_info_t sectors_info[] = {
@@ -37,6 +32,7 @@ static const sector_info_t sectors_info[] = {
  };
 
 target_cfg_t target_device = {
+    .version                    = kTargetConfigVersion,
     .sectors_info               = sectors_info,
     .sector_info_length         = (sizeof(sectors_info))/(sizeof(sector_info_t)),
     .flash_regions[0].start     = DAPLINK_ROM_IF_START,
@@ -48,4 +44,15 @@ target_cfg_t target_device = {
     //  when variable sized sectors exist
     // .sector_cnt = ((.flash_end - .flash_start) / .sector_size);
     /* .flash_algo not needed for bootloader */
+};
+
+const target_family_descriptor_t *g_target_family = NULL;
+
+const board_info_t g_board_info = {
+    .info_version = kBoardInfoVersion,
+    .board_id = "0000",
+    .daplink_url_name =       "HELP_FAQHTM",
+    .daplink_drive_name = 		"MAINTENANCE",
+    .daplink_target_url = "https://daplink.io",
+    .target_cfg = &target_device,
 };
