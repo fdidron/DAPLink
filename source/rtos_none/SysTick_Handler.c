@@ -24,7 +24,8 @@
 
 //SysTick Timer Configuration
 #ifndef OS_CLOCK
-#error "OS_CLOCK should be defined by HIC configuration"
+//#error "OS_CLOCK should be defined by HIC configuration"
+#define OS_CLOCK    120000000
 #endif
 
 //Set the timer tick value for selected timer.

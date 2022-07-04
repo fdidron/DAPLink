@@ -242,10 +242,11 @@ SUPPORTED_CONFIGURATIONS = [
     (   0x0000,     VENDOR_TO_FAMILY('Stub', 1),        'nrf52820_if',                              None,               None                                    ),
     (   0x0000,     VENDOR_TO_FAMILY('Stub', 1),        'sam3u2c_if',                               None,               None                                    ),
     (   0x0000,     VENDOR_TO_FAMILY('Stub', 1),        'stm32f103xb_if',                           None,               None                                    ),
+    (   0x1701,     VENDOR_TO_FAMILY('Stub', 1),        'gd32f303xe_gd32f307vg_if',                 'gd32f303xe_bl',    'GD32_F307VG'                           ),
 
     # Test projects
     (   0x1102,     VENDOR_TO_FAMILY('Nordic', 2),      'lpc55s69_nrf52840dk_test_if',              'lpc55s69_bl',      'Nordic-nRF52840-DK'                    ),
-]
+    ]
 
 # Add new HICs here
 HIC_STRING_TO_ID = {
@@ -262,6 +263,7 @@ HIC_STRING_TO_ID = {
     'nrf52820': 0x6E052820,
     'sam3u2c': 0x97969903,
     'stm32f103xb': 0x97969908,
+    'gd32f303xe': 0x97969909,
 }
 
 BOARD_ID_LOCKED_WHEN_ERASED = set([
